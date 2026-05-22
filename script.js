@@ -1,40 +1,14 @@
-function addTodo() {
-  let todo = document.getElementById("todoInput").value;
-  console.log("todo is", todo);
-  const todos = [
-    {
-      id: 1,
-      todo: "Go to market",
-      assignedTo: "Brother",
-    },
-    {
-      id: 2,
-      todo: "Pick sister from school",
-      assignedTo: "Brother",
-    },
-    {
-      id: 3,
-      todo: "Wash clothes",
-      assignedTo: "Brother",
-    },
-  ];
-  todos.push({
-    id: 4,
-    todo: "Wash clothes",
-    assignedTo: "Brother",
-  });
-  todos.push({
-    id: 100,
-    todo: todo,
-    assignedTo: "Brother",
-  });
-  let content = todos.map((todo) => {
-    return `<div>
-    <span>${todo.id}</span>
-    <span>${todo.todo}</span>
-    <div>${todo.assignedTo}</div>
-    </div>`;
-  });
-  console.log("content", content);
-  document.getElementById("todos").innerHTML = content.join(" ");
+let todo =[]//empty array
+function getvalue(){
+    let value= document.getElementById("todoInput").value;// box bata value lera ako
+    console.log(value);
+
+    let messages= document.getElementById("todos"); //pront garana ho k
+    console.log(messages);
+
+    todo.push(value);// click vayesi array ma add
+
+    const todoList = todo.map((todo) => `<li>${todo}</li>`).join(""); // line by line garauna ko lagi.ani join chai comma hatauna rakheko
+    messages.innerHTML = todoList;
+    todo.length;
 }
